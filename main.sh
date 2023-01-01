@@ -1,7 +1,5 @@
 #!/bin/bash
 
-# Veritabanı bağlantısının ayarlanması
-# Varsyılan bir postgres yapılandırması kullanıyorsanız yanlızca DB_PASS ayarlanması yeterli olacaktır
 DB_HOST=localhost
 DB_USER=postgres
 DB_PASS=v8754367Q
