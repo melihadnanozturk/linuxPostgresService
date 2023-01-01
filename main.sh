@@ -28,9 +28,3 @@ inotifywait -m -e create -e delete --format '%e %f' /home/adnan/Desktop | while 
     psql -h $DB_HOST -U $DB_USER -d $DB_NAME -c "UPDATE dizi SET deleted=true, deletedtime='$now' WHERE name='$(echo "$file" | cut -d' ' -f2)';"
   fi
 done
-
-
-# Daha anlaşılır olması bazı kısımlar hakkında açıklama yapayım
-
-# Satır 15: event'i yakalamak için "%e %f" formatını kullanıyoruz. Bu format dosya oluşturulduğunda "CREATE dosya_adi" ve dosya silindiğinde "DELETE dosya_adi" şeklinde bir çıktı verir.
-# Satır 24 ve 28 : Bu satırlardaki cut komutu ile dosya adını alıyoruz. Örneğin "CREATE dosya_adi" şeklinde bir çıktı aldığımızda dosya adı "dosya_adi" olacaktır.
